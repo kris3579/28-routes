@@ -1,6 +1,7 @@
 import React from 'react';
+import NoteCreateForm from "../NoteCreateForm/NoteCreateForm";
 import uuid from 'uuid/v4';
-import NoteCreateForm from '../note-create-form/note-create-form';
+
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -10,23 +11,23 @@ class Dashboard extends React.Component {
     this.state.notes = [];
   }
 
-  // handleAddNote = (note) => {
-  //     note.createdOn = new Date();
-  //     note.id = uuid();
-  //     return this.setState((previousState) => {
-  //         return {
-  //             notes: [...previousState.notes, note],
-  //         }
-  //     });
-  // };
+  handleAddNote = (note) => {
+    note.createdOn = new Date();
+    note.id = uuid();
+    return this.setState((previousState) => {
+     return {
+       notes: [...previousState.notes, note],
+     }
+    });
+  };
 
   render() {
     return (
-            <section>
-                <h2>Dashboard</h2>
-                <p>Add new note</p>
-                <p>Your notes:</p>
-            </section>
+     <section>
+       <h2>Dashboard</h2>
+       <p>Add new Note</p>
+       <NoteCreateForm handleAddNote={this.handleAddNote}/>
+     </section>
     );
   }
 }
