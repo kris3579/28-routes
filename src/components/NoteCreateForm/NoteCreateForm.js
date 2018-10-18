@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NoteList from '../NoteList/NoteList';
-import Dashboard from "../dashboard/dashboard";
+// import NoteList from '../NoteList/NoteList';
 
 class NoteCreateForm extends React.Component {
   constructor(props) {
@@ -13,19 +12,19 @@ class NoteCreateForm extends React.Component {
     };
   }
 
-  renderNotes = () => {
-    return (
-      <ul>
-        {
-          this.state.notes.map((currentNote) => {
-            return <li key={currentNote.id}>
-              {currentNote.title}: {currentNote.content}
-            </li>
-          })
-        }
-      </ul>
-    );
-  };
+  // renderNotes = () => {
+  //   return (
+  //     <ul>
+  //       {
+  //         this.state.notes.map((currentNote) => {
+  //           return <li key={currentNote.id}>
+  //             {currentNote.title}: {currentNote.content}
+  //           </li>
+  //         })
+  //       }
+  //     </ul>
+  //   );
+  // };
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -57,8 +56,8 @@ class NoteCreateForm extends React.Component {
           onChange={this.handleChange}
         />
         <button type="submit">Create Note</button>
-        <p>Here is a list of all your notes so far:</p>
-        <NoteList NoteList={this.renderNotes}/>
+        {/*<p>Here is a list of all your notes so far:</p>*/}
+        {/*<NoteList NoteList={this.renderNotes}/>*/}
       </form>
     );
   }
