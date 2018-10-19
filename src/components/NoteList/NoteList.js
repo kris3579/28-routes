@@ -1,26 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import NoteItem from '../NoteItem/NoteItem';
 
 class NoteList extends React.Component {
-  renderNotes = () => {
+  renderList = () => {
       return (
-          <ul>
-              {
-                  this.props.notes.map((currentNote) => {
-                      return <li key={currentNote.id}>
-                          {currentNote.title}: {currentNote.content}
-                      </li>
-                  })
-              }
-          </ul>
-      );
+         <NoteItem notes={this.props.notes}/>
+      )
   };
 
   render() {
     return (
         <section>
             <p>Here is a list of all your notes so far:</p>
-            {this.renderNotes()}
+            {this.renderList()}
         </section>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-import NoteCreateForm from "../NoteCreateForm/NoteCreateForm";
-import NoteList from "../NoteList/NoteList";
+import NoteCreateForm from '../NoteCreateForm/NoteCreateForm';
+import NoteList from '../NoteList/NoteList';
 
 
 class Dashboard extends React.Component {
