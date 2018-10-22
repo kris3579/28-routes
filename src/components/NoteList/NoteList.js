@@ -5,7 +5,11 @@ import NoteItem from '../NoteItem/NoteItem';
 class NoteList extends React.Component {
   renderList = () => {
       return (
-         <NoteItem notes={this.props.notes}/>
+         <NoteItem
+             notes={this.props.notes}
+             handleRemoveNote={this.props.handleRemoveNote}
+             handleUpdateNote={this.props.handleUpdateNote}
+         />
       )
   };
 
@@ -20,7 +24,9 @@ class NoteList extends React.Component {
 }
 
 NoteList.propTypes = {
-  notes: PropTypes.array,
+    notes: PropTypes.array,
+    handleRemoveNote: PropTypes.func,
+    handleUpdateNote: PropTypes.func,
 };
 
 export default NoteList;
