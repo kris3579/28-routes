@@ -23,7 +23,7 @@ class NoteUpdateForm extends React.Component {
         let updatedNote = this.props.currentNote;
         updatedNote.title = this.state.title;
         updatedNote.content = this.state.content;
-        this.props.handleUpdateNote.bind(null, this.props.currentNote, updatedNote);
+        this.props.handleUpdateNote(updatedNote);
     };
 
     renderUpdateForm = () => {

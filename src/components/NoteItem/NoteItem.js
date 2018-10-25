@@ -8,6 +8,7 @@ class NoteItem extends React.Component {
             <ul>
                 {
                     this.props.notes.map((currentNote) => {
+                        console.log(currentNote);
                         return <li key={currentNote.id}>
                             {currentNote.title}: {currentNote.content}
                             <button onClick={this.props.handleRemoveNote.bind(null, currentNote)}>Delete Note</button>

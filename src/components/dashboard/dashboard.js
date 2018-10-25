@@ -24,19 +24,18 @@ class Dashboard extends React.Component {
 
   handleRemoveNote = (noteToRemove) => {
       this.setState((previousState) => {
-          notes: previousState.notes.filter(currentNote => currentNote.id !== noteToRemove.id);
+          return {
+            notes: previousState.notes.filter(currentNote => currentNote.id !== noteToRemove.id)
+          }
       })
   };
 
-  handleUpdateNote = (noteToUpdate, UpdatedNote) => {
-      for (let i = 0; i < this.state.notes.length; i++) {
-          if (noteToUpdate === this.state.notes[i]) {
-              this.setState((previousState) => {
-                  previousState.notes[i].title = UpdatedNote.title;
-                  previousState.notes[i].content = UpdatedNote.content;
-              })
+  handleUpdateNote = (updatedNote) => {
+      this.setState((previousState) => {
+          return {
+              notes :previousState.notes,
           }
-      }
+      })
   };
 
   render() {
@@ -47,6 +46,7 @@ class Dashboard extends React.Component {
        <NoteCreateForm
            handleAddNote = {this.handleAddNote}
        />
+         {console.log(this.state.notes)}
        <NoteList
            notes={this.state.notes}
            handleRemoveNote={this.handleRemoveNote}
