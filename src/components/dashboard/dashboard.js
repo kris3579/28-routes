@@ -31,6 +31,7 @@ class Dashboard extends React.Component {
   };
 
   handleUpdateNote = (updatedNote) => {
+      console.log(this.state);
       this.setState((previousState) => {
           return {
               notes :previousState.notes,
